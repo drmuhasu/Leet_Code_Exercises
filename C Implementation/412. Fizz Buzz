@@ -1,0 +1,31 @@
+/**
+ * Note: The returned array must be malloced, assume caller calls free().
+ */
+char ** fizzBuzz(int n, int* returnSize){
+    
+    *returnSize = n; 
+    char **print= NULL; 
+    print= malloc(sizeof(*print) * n); 
+    char str[5];
+
+    if(n == 1){
+        sprintf(str, "%d", n);
+        print[0] = strdup(str);
+    }else{
+        for(int i = 1; i <= n; i++)
+        {
+            if (i % 15 == 0)
+                print[i - 1] = strdup("FizzBuzz"); // NB we need to start duplicating from position 0 => (i - 1)
+            else if (i % 3 == 0)
+                print[i - 1] = strdup("Fizz");
+            else if (i % 5 == 0)
+                print[i - 1] = strdup("Buzz");
+            else
+            {
+                sprintf(str, "%d", i); // converting integer i into char and storing it in str
+                print[i - 1] = strdup(str);
+            }
+        }
+    }
+    return print;
+}

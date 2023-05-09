@@ -1,0 +1,11 @@
+char findTheDifference(char* s, char* t) {
+    int count_s = 0;
+    int count_t = 0;
+    for (int i = 0; i < strlen(s); i++) {
+        count_s += s[i];
+    }
+    for (int i = 0; i < strlen(t); i++) {
+        count_t += t[i];
+    }
+    return count_t - count_s; 
+}

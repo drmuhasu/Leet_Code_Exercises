@@ -1,0 +1,13 @@
+int addDigits(int num){
+    int first;
+    int second;
+    
+    if(num >= 10){
+        while(num >= 10){
+            first = num % 10;
+            second = num / 10;
+            num = first + second;
+            }
+    }
+    return num;
+}   

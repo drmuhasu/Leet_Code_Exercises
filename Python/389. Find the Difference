@@ -1,0 +1,15 @@
+class Solution:
+    def findTheDifference(self, s: str, t: str) -> str:
+        char_sum = 0
+        if(len(t) > len(s)):
+            x = s 
+            s = t 
+            t = x
+        
+        for char in s:
+            char_sum += ord(char)
+
+        for char in t:
+            char_sum -= ord(char)
+
+        return chr(char_sum)

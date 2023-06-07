@@ -1,0 +1,16 @@
+class Solution(object):
+    def isMonotonic(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: bool
+        """
+
+        inc = dec = 0
+
+        for i in range(len(nums) - 1):
+            if nums[i] >= nums[1 + i]:
+                dec = dec + 1
+            if nums[i] <= nums[1 + i]:
+                inc = inc + 1
+
+        return inc == len(nums) - 1 or dec == len(nums) - 1

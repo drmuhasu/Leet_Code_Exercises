@@ -1,0 +1,21 @@
+bool isPalindrome(int x) {
+    if (x < 0) {
+        return false;
+    }
+
+    char st[20];
+    sprintf(st, "%d", x);
+    char xt[20];
+    strcpy(xt, st);
+    
+    int length = strlen(st);
+    int i, j;
+    
+    for (i = 0, j = length - 1; i < j; i++, j--) {
+        char temp = st[i];
+        st[i] = st[j];
+        st[j] = temp;
+    }
+
+    return strcmp(st, xt) == 0;
+}

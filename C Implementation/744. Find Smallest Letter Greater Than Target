@@ -1,0 +1,10 @@
+char nextGreatestLetter(char* letters, int lettersSize, char target){
+    char output = letters[0];
+    for(int i = 0; i < lettersSize; i++){
+        if(letters[i] - target > 0){
+            output = letters[i];
+            break;
+        }
+    } 
+    return output;
+}

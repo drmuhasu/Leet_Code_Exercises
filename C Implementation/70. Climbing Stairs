@@ -1,0 +1,19 @@
+int climbStairs(int n) {
+    if (n <= 3) {
+        return n;
+    }
+    
+    int prev1 = 1;
+    int prev2 = 2;
+    int prev3 = 3;
+    int ways = 0;
+
+    for (int i = 4; i <= n; i++) { 
+        ways = prev2 + prev3; 
+        prev1 = prev2;
+        prev2 = prev3;
+        prev3 = ways; 
+    }
+    
+    return ways;
+}
